@@ -6,10 +6,7 @@
     <% @posts.each do |post| %>
         <div>
             <h3><%= link_to post.title, posts_path('post') %></h3>
-            <% if question.answers_count %>
-                <small>Answers Count: <%= question.answers_count %></small>
-            <% end %>
-            <hr />
+           
         </div>
     <% end %>
     </div>
