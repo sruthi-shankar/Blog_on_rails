@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
 get '/' ,to:'welcome#root' ,as: :root
 
-resources:posts
+resources:posts do
+  resources:comments, only: [:create, :destroy]
+end
+ 
 
 resources:users ,only: [:new, :create]
 

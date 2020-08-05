@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
 
-    validates:title, presence:true, uniqueness:true
+    has_many :comments , dependent: :destroy
+    belongs_to :user
 
-    validates:body, presence:true, length: {minimum:10}
+    validates :title, presence: true, uniqueness:true
+    validates :body,presence: true,length: {minimum:10}
 end

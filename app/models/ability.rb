@@ -6,10 +6,10 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-      user ||= User.new # guest user (not logged in)
-      if user.is_admin?
-        can :manage, :all
-      end
+     # user ||= User.new # guest user (not logged in)
+      #if user.is_admin?
+      #  can :manage, :all
+     # end
     #   else
     #     can :read, :all
     #   end
@@ -36,6 +36,9 @@ class Ability
 
     can(:crud, Post) do |post|
       post.user == user # true / false
+    end
+    can(:crud, Comment) do |comment|
+    comment.user == user # true / false
     end
 
     can(:crud, User) do |user|
