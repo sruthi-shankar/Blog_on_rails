@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        # DELETE PATH = /questions/:question_id/answers/:id
+       
             @comment = Comment.find params[:id]
         
             @comment.destroy 
